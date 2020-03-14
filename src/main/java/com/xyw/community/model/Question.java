@@ -1,4 +1,4 @@
-package com.xyw.model;
+package com.xyw.community.model;
 
 import lombok.Data;
 

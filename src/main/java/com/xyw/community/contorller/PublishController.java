@@ -2,8 +2,8 @@ package com.xyw.community.contorller;
 
 import com.xyw.community.mapper.QuestionMapper;
 import com.xyw.community.mapper.UserMapper;
-import com.xyw.model.Question;
-import com.xyw.model.User;
+import com.xyw.community.model.Question;
+import com.xyw.community.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

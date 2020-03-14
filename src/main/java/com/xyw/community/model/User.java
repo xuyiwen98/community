@@ -1,4 +1,4 @@
-package com.xyw.model;
+package com.xyw.community.model;
 
 import lombok.Data;
 
@@ -11,6 +11,4 @@ public class User {
     private Long gmtCreat;
     private Long gmtModified;
     private String avatarUrl;
-
-
 }
