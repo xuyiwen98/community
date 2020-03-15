@@ -43,7 +43,7 @@ public class AuthorizeController {
         accessTokenDTO.setRedirect_uri(redirectUri);
         accessTokenDTO.setState(state);
         String accessToken = githubProvider.getAccessToken(accessTokenDTO);
-        GithubUser githubUser= githubProvider.getUser(accessToken);
+        GithubUser githubUser = githubProvider.getUser(accessToken);
         //System.out.println(user.getName());
 
         if (githubUser != null) {
@@ -59,7 +59,7 @@ public class AuthorizeController {
             user.setAvatarUrl(githubUser.getAvatar_url());
             userMapper.insert(user);
 
-            response.addCookie(new Cookie("token",token));
+            response.addCookie(new Cookie("token", token));
             return "redirect:/";
         } else {
             //登录失败，重新登录
