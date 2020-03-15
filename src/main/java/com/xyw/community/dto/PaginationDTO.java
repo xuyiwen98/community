@@ -14,30 +14,15 @@ public class PaginationDTO {
     private boolean showNext;
     private boolean showEndPage;
     //总共的页数
-    private Integer totalePage;
+    private Integer totalPage;
     //当前在第几页
     private Integer page;
     //底部页码导航栏
     private List<Integer> pages = new ArrayList<>();
 
 
-    public void setPagination(Integer totalCount, Integer page, Integer size) {
-
-        //计算总页数
-        if (totalCount % size == 0) {
-            totalePage = totalCount / size;
-        } else {
-            totalePage = totalCount / size + 1;
-        }
-
-        //对分页框的简单容错处理
-        if(page<1){
-            page=1;
-        }
-        if(page>totalePage){
-            page=totalePage;
-        }
-
+    public void setPagination(Integer totalPage, Integer page) {
+        this.totalPage=totalPage;
         this.page=page;
 
         //计算pages中展示的内容
@@ -48,7 +33,7 @@ public class PaginationDTO {
                 //头部插入
                 pages.add(0,page - i);
             }
-            if (page + i <= totalePage) {
+            if (page + i <= totalPage) {
                 //尾部插入
                 pages.add(page + i);
             }
@@ -62,7 +47,7 @@ public class PaginationDTO {
         }
 
         //是否展示下一页
-        if (page.equals(totalePage)) {
+        if (page.equals(totalPage)) {
             showNext = false;
         } else {
             showNext = true;
@@ -76,7 +61,7 @@ public class PaginationDTO {
         }
 
         //是否展示最后一页
-        if (pages.contains(totalePage)) {
+        if (pages.contains(totalPage)) {
             showEndPage = false;
         } else {
             showEndPage = true;
