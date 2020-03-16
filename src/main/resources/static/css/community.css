@@ -30,3 +30,9 @@ body{
 .profile .section{
 margin-top: 20px;
 }
+
+/*问题详情页面下的编辑按钮*/
+.community-menu{
+    color: #999;
+    font-size: 13px;
+}
